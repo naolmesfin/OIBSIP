@@ -1,0 +1,75 @@
+
+OASIS INFOBYTE - SECURITY ANALYST INTERNSHIP
+TASK 1: BASIC NETWORK SCANNING WITH NMAP
+
+Target IP: 10.0.2.15
+Hostname: Ubunt
+Scanner: Nmap 7.94SVN
+Environment: Ubuntu Linux Virtual Machine
+
+========================================
+1. BASIC NETWORK SCAN
+========================================
+
+Command:
+nmap 10.0.2.15
+
+Findings:
+- Host is up.
+- 1000 closed TCP ports.
+- No open TCP ports discovered.
+- Ports were reported as closed (conn-refused).
+
+========================================
+2. SERVICE VERSION DETECTION
+========================================
+
+Command:
+nmap -sV 10.0.2.15
+
+Findings:
+- Host is up.
+- 1000 closed TCP ports.
+- No services or service versions identified.
+- Service detection was performed.
+
+========================================
+3. OPERATING SYSTEM DETECTION
+========================================
+
+Command:
+sudo nmap -O 10.0.2.15
+
+Findings:
+- Host is up.
+- 1000 closed TCP ports.
+- Nmap could not identify a specific OS.
+- Too many fingerprints matched the target.
+- Network distance: 0 hops.
+
+========================================
+4. OVERALL SECURITY ANALYSIS
+========================================
+
+The target machine was reachable, but no open TCP
+ports were discovered among the 1000 default ports
+scanned.
+
+No service versions could be identified because
+no open ports were found.
+
+OS detection was attempted but did not produce
+a specific operating system identification.
+
+These results do not prove that the machine is
+completely secure. Further assessment may include
+UDP scanning, additional port ranges, and reviewing
+local services and firewall configurations.
+
+========================================
+5. CONCLUSION
+========================================
+
+The exercise demonstrated basic network scanning,
+service version detection, and OS fingerprinting
+using Nmap.
