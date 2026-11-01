@@ -1,0 +1,53 @@
+OASIS INFOBYTE SECURITY ANALYST INTERNSHIP
+TASK 2: FIREWALL CONFIGURATION USING UFW
+
+Operating System: Ubuntu 24.04 LTS
+Firewall: UFW
+
+1. INITIAL FIREWALL STATUS
+Command: sudo ufw status verbose
+Result: Status: inactive
+
+2. DEFAULT FIREWALL POLICIES
+Command: sudo ufw default deny incoming
+Result: Default incoming policy changed to deny.
+
+Command: sudo ufw default allow outgoing
+Result: Default outgoing policy changed to allow.
+
+3. ALLOWED SERVICES
+Command: sudo ufw allow 80/tcp
+Result: HTTP traffic allowed.
+
+Command: sudo ufw allow 443/tcp
+Result: HTTPS traffic allowed.
+
+4. FIREWALL ACTIVATION
+Command: sudo ufw enable
+Result: Firewall successfully enabled.
+
+5. BLOCKED PORT
+Command: sudo ufw deny 8080/tcp
+Result: Incoming TCP traffic on port 8080 denied.
+
+6. FIREWALL LOGGING
+Command: sudo ufw logging medium
+Result: Logging enabled at medium level.
+
+7. FINAL VERIFICATION
+Command: sudo ufw status verbose
+
+Status: active
+Logging: on (medium)
+Default: deny (incoming), allow (outgoing), deny (routed)
+
+Rules:
+80/tcp       ALLOW IN
+443/tcp      ALLOW IN
+8080/tcp     DENY IN
+
+The rules were applied to IPv4 and IPv6.
+
+CONCLUSION:
+UFW was successfully configured to deny incoming traffic by default,
+allow outgoing traffic, permit HTTP and HTTPS, and block TCP port 8080.
